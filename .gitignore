@@ -1,0 +1,5 @@
+node_modules
+notes.json
+.env
+loggers/*
+dist
