@@ -18,7 +18,7 @@ function createServer() {
   app.use("/user", userRoutes);
   app.use("/todo", Authenticate, todoRoutes);
   app.get("/api/users", (req, res) => {
-    res.status(200).json({ users: [{ id: 1, name: "John Doe" }] });
+    res.status(200).json({ message: "verified token" });
   });
 
   return app;
