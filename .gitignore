@@ -3,3 +3,4 @@ notes.json
 .env
 loggers/*
 dist
+logs/

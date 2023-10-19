@@ -1,25 +1,11 @@
-import express from "express";
-import userRoutes from "./routes/userRoutes";
-import todoRoutes from "./routes/todoRoutes";
 import * as dotenv from "dotenv";
 import "reflect-metadata";
 import AppDataSource from "./util/data-source";
-import { Authenticate } from "./middleware/auth";
 import logger from "./util/logger";
-import * as expressWinston from "express-winston";
+import createServer from "./server";
 
 dotenv.config();
-const app = express();
-app.use(express.json());
-app.use(
-  expressWinston.logger({
-    winstonInstance: logger,
-    statusLevels: true,
-  })
-);
-
-app.use("/user", userRoutes);
-app.use("/todo", Authenticate, todoRoutes);
+const app = createServer();
 
 AppDataSource.initialize()
   .then(() => {
@@ -28,3 +14,5 @@ AppDataSource.initialize()
     });
   })
   .catch((err) => logger.error("Internal Server Error", { error: err }));
+
+export default app;

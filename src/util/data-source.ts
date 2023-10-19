@@ -12,7 +12,7 @@ const AppDataSource = new DataSource({
   password: process.env.PASSWORD,
   entities: ["src/entity/*{.ts,.js}"],
   synchronize: true,
-  logging: true,
+  logging: false,
 });
 
 export default AppDataSource;
