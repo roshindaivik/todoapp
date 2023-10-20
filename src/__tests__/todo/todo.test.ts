@@ -75,7 +75,7 @@ describe("TODO API TEST", () => {
 
     it("Successfully delete todo", async () => {
       const response = await request(app)
-        .delete("/todo/del-todo/27")
+        .delete("/todo/del-todo/29")
         .set("Content-Type", "application/json")
         .set("Authorization", `${authToken}`);
       expect(response.status).toBe(204);
