@@ -11,21 +11,19 @@ import Todo from "./Todo";
 @Unique(["email"])
 class User {
   @PrimaryGeneratedColumn()
-  id: number;
+  id: number; /* eslint-disable-line */
 
-  @Column({
-    length: 6,
-  })
-  username: string;
+  @Column({ length: 6 })
+  username: string; /* eslint-disable-line */
 
   @Column()
-  email: string;
+  email: string; /* eslint-disable-line */
 
   @Column()
-  password: string;
+  password: string; /* eslint-disable-line */
 
   @OneToMany(() => Todo, (todo: Todo) => todo.user)
-  todos: Todo[];
+  todos: Todo[]; /* eslint-disable-line */
 }
 
 export default User;

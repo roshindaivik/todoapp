@@ -108,3 +108,7 @@ export const delTodo = async (req: CustomRequest, res: Response) => {
     return res.status(500).json({ msg: "failed", err });
   }
 };
+
+//To be integrated
+//prettier and services
+//hashmap and sets

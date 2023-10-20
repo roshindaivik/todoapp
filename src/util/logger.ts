@@ -21,7 +21,7 @@ const logger = createLogger({
     format.timestamp(),
     format.json(),
     format.metadata(),
-    format.prettyPrint()
+    format.prettyPrint(),
   ),
 });
 

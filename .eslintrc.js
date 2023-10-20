@@ -14,6 +14,9 @@ module.exports = {
       parserOptions: {
         sourceType: "script",
       },
+      rules: {
+        "linebreak-style": "off",
+      },
     },
   ],
   parser: "@typescript-eslint/parser",

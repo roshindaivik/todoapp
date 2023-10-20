@@ -12,7 +12,7 @@ function createServer() {
     expressWinston.logger({
       winstonInstance: logger,
       statusLevels: true,
-    })
+    }),
   );
 
   app.use("/user", userRoutes);

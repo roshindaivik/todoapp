@@ -1,6 +1,6 @@
-import createServer from "../server";
+import createServer from "../../server";
 import request from "supertest";
-import AppDataSource from "../util/data-source";
+import AppDataSource from "../../util/data-source";
 
 const app = createServer();
 

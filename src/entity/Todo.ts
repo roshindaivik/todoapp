@@ -5,16 +5,16 @@ import User from "./User";
 @Entity()
 class Todo {
   @PrimaryGeneratedColumn()
-  id: number;
+  id: number; /* eslint-disable-line */
 
   @Column({ type: "varchar", length: 255 })
-  task: string;
+  task: string; /* eslint-disable-line */
 
   @Column({ type: "enum", enum: StatusTodo, default: StatusTodo.Pending })
-  status: StatusTodo;
+  status: StatusTodo; /* eslint-disable-line */
 
   @ManyToOne(() => User, (user: User) => user.todos)
-  user: User;
+  user: User; /* eslint-disable-line */
 }
 
 export default Todo;

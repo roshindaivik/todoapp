@@ -1,7 +1,7 @@
-import createServer from "../server";
+import createServer from "../../server";
 import request from "supertest";
-import AppDataSource from "../util/data-source";
-import RedisClient from "../util/client";
+import AppDataSource from "../../util/data-source";
+import RedisClient from "../../util/client";
 
 const app = createServer();
 const authToken = process.env.TEST_TOKEN;

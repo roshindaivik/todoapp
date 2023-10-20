@@ -12,7 +12,9 @@ export const validateUserCredentials: ValidationChain[] = [
     .isEmail()
     .custom(async (value) => {
       const userRepo = AppDataSource.getRepository(User);
-      const existingUser = await userRepo.findOne({ where: { email: value } });
+      const existingUser = await userRepo.findOne({
+        where: { email: value },
+      });
       if (existingUser) {
         throw new Error("A user already exists with this e-mail address");
       }
@@ -28,7 +30,7 @@ export const validateUserCredentials: ValidationChain[] = [
 export function generateToken(user: User): string {
   const token: string = jwt.sign(
     { userId: user.id },
-    process.env.SECRET_KEY as string
+    process.env.SECRET_KEY as string,
   );
   return token;
 }

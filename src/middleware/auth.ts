@@ -5,7 +5,7 @@ import { CustomRequest, DecodedToken } from "../types/common";
 export const Authenticate = async (
   req: CustomRequest,
   res: Response,
-  next: NextFunction
+  next: NextFunction,
 ) => {
   try {
     const token: string | undefined | null = req.header("Authorization");
@@ -14,7 +14,7 @@ export const Authenticate = async (
     }
     const result = jwt.verify(
       token,
-      process.env.SECRET_KEY as string
+      process.env.SECRET_KEY as string,
     ) as DecodedToken;
     if (!result) {
       throw new Error("missing token");
