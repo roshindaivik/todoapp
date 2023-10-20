@@ -67,7 +67,7 @@ describe("TODO API TEST", () => {
 
     it("User not authorized to delete todo", async () => {
       const response = await request(app)
-        .delete("/todo/del-todo/9")
+        .delete("/todo/del-todo/8")
         .set("Content-Type", "application/json")
         .set("Authorization", `${authToken}`);
       expect(response.status).toBe(403);
@@ -75,7 +75,7 @@ describe("TODO API TEST", () => {
 
     it("Successfully delete todo", async () => {
       const response = await request(app)
-        .delete("/todo/del-todo/29")
+        .delete("/todo/del-todo/7")
         .set("Content-Type", "application/json")
         .set("Authorization", `${authToken}`);
       expect(response.status).toBe(204);

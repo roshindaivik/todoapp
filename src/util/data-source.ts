@@ -8,7 +8,7 @@ const AppDataSource = new DataSource({
   host: process.env.HOST,
   port: 3306,
   username: process.env.DB_USER,
-  database: "todoapp",
+  database: process.env.DB_TEST,
   password: process.env.PASSWORD,
   entities: ["src/entity/*{.ts,.js}"],
   synchronize: true,
